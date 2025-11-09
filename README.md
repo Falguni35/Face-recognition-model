@@ -115,19 +115,24 @@ cv2.destroyAllWindows()
 
 ```
 Face-recognition-model/
-├─ dataset/
-│  ├─ Alice/
-│  └─ Bob/
-├─ notebooks/
-│  ├─ collect_data.ipynb
-│  ├─ Face_detection.ipynb
-│  ├─ consolidated_data.ipynb
-│  └─ recognize.ipynb
-├─ models/
-│  └─ final_model.h5
-├─ haarcascade_frontalface_default.xml
-├─ requirements.txt
-└─ README.md
+├── data/                                   # Contains serialized training data and labels
+│   ├── images.p                            # Pickle file storing processed face image arrays
+│   └── labels.p                            # Pickle file storing corresponding labels for images
+│
+├── images/                                 # Contains raw training images of different people
+│   ├── person1/                            # Folder for images of person 1
+│   ├── person2/                            # Folder for images of person 2
+│   └── ...                                 # Add folders for each person used for training
+│
+├── Face_detection.ipynb                    # Notebook for face detection and model training
+├── collect_data.ipynb                      # Notebook to capture and store face data from webcam
+├── consolidated_data.ipynb                 # Notebook for preparing and consolidating the dataset
+├── recognize.ipynb                         # Notebook for real-time face recognition
+│
+├── final_model.h5                          # Trained Keras model file
+├── haarcascade_frontalface_default.xml     # Haar Cascade classifier for face detection
+└── README.md                               # Project documentation
+
 ```
 
 Example `requirements.txt`:
